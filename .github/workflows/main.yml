@@ -21,6 +21,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: MCGI-CHRISTCHURCH-Back-End # Backend context
+          dockerfile: ./MCGI-CHRISTCHURCH-Back-End/Dockerfile 
           push: true
           tags: maryrosegithub21/mcgi-backend:latest
 
@@ -41,7 +42,7 @@ jobs:
       - name: Build and push frontend Docker image
         uses: docker/build-push-action@v3
         with:
-          context: front # Frontend context
+          context: MCGI-CHRISTCHURCH-Front-End
           push: true
           tags: maryrosegithub21/mcgi-frontend:latest
 
