@@ -17,9 +17,9 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-southeast-2
 
-      - name: Create/Update Lightsail Container Service
+      - name: Push Container Image to Lightsail
         run: |
-          aws lightsail project-one-mcgi \
+           aws lightsail push-container-image \
               --service-name project-one-mcgi \
               --public-repository true \
               --repository-name maryrosegithub21/mcgifeastcelebration.git\
